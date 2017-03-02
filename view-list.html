@@ -1,0 +1,28 @@
+<div class="form-group">
+  <input type="text" class="form-control" id="search" placeholder="Search Clients" data-ng-model="search" />
+</div>
+<table class="table table-striped table-hover">
+  <tbody>
+    <tr>
+      <th>TSN</th>
+      <th>PAYROLL_CD</th>
+      <th>COMPANY_NAME</th>
+      <th>STATUS</th>
+      <th>EFF_DATE</th>
+      <th>USER_ID</th>
+      <th>MIGRATE_REQUESTED_TS</th>
+    </tr>
+    <tr data-ng-repeat="item in data | filter:search" data-ng-click="addItem($index)">
+      <td>{{item.tsn}}</td>
+      <td>{{item.payroll_cd}}</td>
+      <td>{{item.company_name}}</td>
+      <td>{{item.status}}</td>
+      <td>{{item.eff_date}}</td>
+      <td>{{item.user_id}}</td>
+      <td>{{item.migrate_requested_ts}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="form-group">
+  <button data-ng-click="addClient()" class="btn btn-primary">Migrate Clients</button>
+</div>
